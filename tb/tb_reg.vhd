@@ -31,7 +31,7 @@ architecture test of tb_reg is
   signal data_in   : std_logic_vector (3 downto 0);
   signal endSim	 : boolean   := false;
 
-  component reg  is
+  component generic_reg  is
 	generic (
 		DATA_W		: natural := 32
 	);
@@ -86,7 +86,7 @@ begin
 		wait until (rising_edge(clk));
 	end process;	
 
-  reg_inst : reg
+  reg_inst : generic_reg
   generic map ( DATA_W	 => DATA_W	)
   port map (
     clk      => clk,
