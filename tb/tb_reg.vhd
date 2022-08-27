@@ -15,16 +15,16 @@ end entity;
 
 architecture test of tb_reg is
 
-    constant PERIOD  : time   := 20 ns;
-    constant DATA_W  : natural := 4;
+  constant PERIOD  : time   := 20 ns;
+  constant DATA_W  : natural := 4;
 	
-    signal clk       : std_logic := '0';
-    signal rst       : std_logic := '1';
-    signal load      : std_logic := '0';
-    signal data_in   : std_logic_vector (3 downto 0);
-    signal endSim	 : boolean   := false;
+  signal clk       : std_logic := '0';
+  signal rst       : std_logic := '1';
+  signal load      : std_logic := '0';
+  signal data_in   : std_logic_vector (3 downto 0);
+  signal endSim	 : boolean   := false;
 
-    component reg  is
+  component reg  is
 	generic (
 		DATA_W		: natural := 32
 	);
@@ -39,7 +39,7 @@ architecture test of tb_reg is
 		-- outputs
 		data_out: 	out std_logic_vector (DATA_W-1 downto 0)
 	);
-    end component;
+  end component;
     
 
 begin
@@ -79,18 +79,16 @@ begin
 		wait until (rising_edge(clk));
 	end process;	
 
-    reg_inst : reg
-    generic map (
-		DATA_W	 => DATA_W
-	)
-    port map (
-        clk      => clk,
-        rst	     => rst,
+  reg_inst : reg
+  generic map ( DATA_W	 => DATA_W	)
+  port map (
+    clk      => clk,
+    rst	     => rst,
 		
-        data_in  => data_in,
-        load     => load,
+    data_in  => data_in,
+    load     => load,
 		
-        data_out => open
-    );
+    data_out => open
+  );
 
 end architecture;
