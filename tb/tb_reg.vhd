@@ -1,11 +1,18 @@
-------------------------------------------------------------------
--- Name		     : tb_reg.vhd
--- Description : Testbench for reg.vhd
--- Designed by : Claudio Avi Chami - FPGA'er  website
---               fpgaer.wordpress.com 
--- Date        : 26/03/2016
--- Version     : 01
-------------------------------------------------------------------
+----------------------------------------------------------------------------------
+-- Company:  FPGA'er
+-- Engineer: Claudio Avi Chami - FPGA'er Website
+--           http://fpgaer.tech
+-- Create Date: 27.08.2022 
+-- Module Name: tb_reg.vhd
+-- Description: testbench for generic register with load
+--              
+-- Dependencies: generic_reg.vhd
+-- 
+-- Revision: 1
+-- Revision  1 - File Created
+-- 
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
 library ieee;
     use ieee.std_logic_1164.all;
     use std.textio.all;
