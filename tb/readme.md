@@ -1,1 +1,1 @@
-Testbench file for the generic register
+Testbench file and Vivado waveform for the generic register
