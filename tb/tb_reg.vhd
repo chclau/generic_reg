@@ -26,7 +26,7 @@ architecture test of tb_reg is
   constant DATA_W  : natural := 4;
 	
   signal clk       : std_logic := '0';
-  signal rst       : std_logic := '1';
+  signal rstn      : std_logic := '0';
   signal load      : std_logic := '0';
   signal data_in   : std_logic_vector (3 downto 0);
   signal endSim	 : boolean   := false;
@@ -37,7 +37,7 @@ architecture test of tb_reg is
 	);
 	port (
 		clk: 		in std_logic;
-		rst: 		in std_logic;
+		rstn: 		in std_logic;
 		
 		-- inputs
 		data_in:	in std_logic_vector (DATA_W-1 downto 0);
@@ -51,7 +51,7 @@ architecture test of tb_reg is
 
 begin
     clk     <= not clk after PERIOD/2;
-    rst     <= '0' after  PERIOD*10;
+    rstn    <= '1' after  PERIOD*10;
 
 	-- End the simulation
 	process 
