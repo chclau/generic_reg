@@ -2,40 +2,37 @@
 -- Company:  FPGA'er
 -- Engineer: Claudio Avi Chami - FPGA'er Website
 --           http://fpgaer.tech
--- Create Date: 21.08.2022 
+-- Create Date: 25.09.2022 
 -- Module Name: generic_reg.vhd
--- Description: Generic parallel register with load
+-- Description: generic register with load
 --              
--- Dependencies: None
+-- Dependencies: generic_reg.vhd
 -- 
--- Revision: 1
--- Revision  1 - File Created
+-- Revision: 2
+-- Revision  2 - Using unconstrained signals in place of generics
 -- 
-----------------------------------------------------------------------------------
-
+----------------------------------------------------------------------------------------------------------------------------------------------------
 library ieee;
   use ieee.std_logic_1164.all;
 
 entity generic_reg is
-  generic ( DATA_W  : natural := 32);
   port (
     rstn      : in  std_logic;
     clk       : in  std_logic; 
 
     -- inputs
-    data_in   : in  std_logic_vector(DATA_W-1 downto 0);
+    data_in   : in  std_logic_vector;
     load      : in  std_logic; 
     
     -- outputs
-    data_out  : out std_logic_vector(DATA_W-1 downto 0)
+    data_out  : out std_logic_vector
     
   );
 end entity;
 
 architecture rtl of generic_reg is
-
 begin
-
+  
   reg_pr : process (clk) 
 	begin
     if (rising_edge(clk)) then
