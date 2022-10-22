@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="651845257fs"></ZoomEndTime>
+      <ZoomStartTime time="55000000fs"></ZoomStartTime>
+      <ZoomEndTime time="385000001fs"></ZoomEndTime>
       <Cursor1Time time="330000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="136"></NameColumnWidth>
-      <ValueColumnWidth column_width="69"></ValueColumnWidth>
+      <ValueColumnWidth column_width="65"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="7" />
+   <WVObjectSize size="9" />
    <wvobject fp_name="/tb_reg/rstn" type="logic">
       <obj_property name="ElementShortName">rstn</obj_property>
       <obj_property name="ObjectShortName">rstn</obj_property>
@@ -46,5 +46,13 @@
    <wvobject fp_name="/tb_reg/data_out2" type="array">
       <obj_property name="ElementShortName">data_out2[7:0]</obj_property>
       <obj_property name="ObjectShortName">data_out2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_reg/data_in3" type="array">
+      <obj_property name="ElementShortName">data_in3[31:28]</obj_property>
+      <obj_property name="ObjectShortName">data_in3[31:28]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_reg/data_out3" type="array">
+      <obj_property name="ElementShortName">data_out3[3:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out3[3:0]</obj_property>
    </wvobject>
 </wave_config>
