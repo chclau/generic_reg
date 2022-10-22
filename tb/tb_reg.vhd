@@ -31,6 +31,8 @@ architecture test of tb_reg is
     signal data_out1 : std_logic_vector (data_in1'range);
     signal data_in2  : std_logic_vector (7 downto 0);
     signal data_out2 : std_logic_vector (data_in2'range);
+    signal data_in3  : std_logic_vector (31 downto 28);
+    signal data_out3 : std_logic_vector(data_in3'length-1 downto 0);
     signal endSim	 : boolean   := false;
 
   component generic_reg  is
@@ -61,6 +63,7 @@ begin
 
 		data_in1 <= x"A";
 		data_in2 <= x"7C";
+		data_in3 <= x"3";
 		load	<= '1';
 		wait until (rising_edge(clk));
 		load	<= '0';
@@ -102,6 +105,15 @@ begin
         data_in  => data_in2,
         load     => load,	
         data_out => data_out2
+    );
+    
+  reg_inst3 : generic_reg
+    port map (
+        clk      => clk,
+        rstn	   => rstn,		
+        data_in  => data_in3,
+        load     => load,	
+        data_out => data_out3
     );
 
 end architecture;
