@@ -8,8 +8,8 @@
 --              
 -- Dependencies: generic_reg.vhd
 -- 
--- Revision: 2
--- Revision  2 - Using unconstrained signals in place of generics
+-- Revision: 3
+-- Revision  3 - Using unconstrained signals in place of generics, added unconstrained signal normalization
 -- 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 library ieee;
@@ -31,6 +31,8 @@ entity generic_reg is
 end entity;
 
 architecture rtl of generic_reg is
+  -- normalize the unconstrained input
+  alias data_in_norm : std_logic_vector(data_in'length - 1 downto 0) is data_in; -- normalized unconstrained input
 begin
   
   reg_pr : process (clk) 
@@ -39,7 +41,7 @@ begin
       if (rstn = '0') then
         data_out <= (others=>'0');
       elsif (load = '1') then
-        data_out <= data_in;
+        data_out <= data_in_norm;
       end if;
     end if;
   end process reg_pr;
